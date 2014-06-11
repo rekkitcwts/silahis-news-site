@@ -1,0 +1,298 @@
+body {
+	padding-top: 50px;
+}
+
+#loginForm
+{
+	background-color: #eeeeee;
+}
+
+#search-form{
+	margin-top: -2px;
+	display: block;
+}
+
+#search-field {
+	font-size: 0.9em;
+    color: #5f574f;
+    width: 220px;
+    height: 20px;
+    padding-left: 10px;
+    border: 2px solid #e9e6df;
+    background-color: #fbfbf9;
+    border-radius: 8px;
+    position: relative;
+}
+
+#search-form #search-btn {
+    cursor: pointer;
+    border: 0;
+    height: 26px;
+    width: 26px;
+    background-color: transparent;
+    position: relative;
+  	right: 30px;
+}
+
+#search-form #search-btn i {
+    color: #5f574f;
+}
+
+.navbar-fixed-top
+{
+	background-color: #322c2c;
+}
+
+.navbar-default .navbar-nav > li > a {
+    background-color: rgba(0, 0, 0, 0);
+    color: #EEEEEE;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: rgba(0, 0, 0, 0);
+    color: #FFFFFF;
+}
+
+p, small, a, h1, h2, h3, h4, h5, h6, q, blockquote, li {
+	font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+}
+
+/* Varying layouts begin here */
+
+hr
+{
+	margin-bottom: 1px; 
+	margin-top: 1px;
+}
+
+.two-col-news
+{
+	width: 227px;
+	height:142px;
+}
+
+.homepage-header-indicator
+{
+	margin-top: 0px;
+}
+
+a.thumb 
+{
+	display: block;
+	position: relative;
+}
+
+div
+{
+	display: block;
+}
+
+.img-width-340 
+{
+	width: 340px;
+}
+
+span.textOnImage 
+{
+	bottom: 0;
+	display: block;
+	left: 0;
+	padding: 5px 10px;
+	position: absolute;
+	right: 0;
+	font-size: 1.333em;
+	font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	text-shadow: 1px 1px 2px #000;
+	line-height: 1;
+	background: #111;
+	background: rgba(17,17,17,0.8);
+}
+
+.carousel-caption{
+    font-size: 1.333em;
+	font-family: 'ProximaNova', Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	text-shadow: 1px 1px 2px #000;
+	line-height: 1;
+	background: #111;
+	background: rgba(17,17,17,0.8);
+}
+
+a.carousel-headline
+{
+	color: #ffffff;
+}
+
+.carousel-caption
+{
+	left: 0;
+	bottom: 0;
+	width: 485px;
+}
+
+.carousel-indicators
+{
+	bottom: 5px;
+}
+
+.boundary
+{
+	margin-left: -113px;
+	margin-right: -113px;
+}
+
+.fixup
+{
+	width: 100%;
+}
+
+.spotlight-image
+{
+	width: 100%;
+	height: 303px !important;
+}
+
+.carousel-inner{
+  width:100%;
+  max-height: 303px !important;
+}
+
+a.thumb:link, a.thumb:visited 
+{
+	color: #eee;
+}
+
+li#search
+{
+	padding-top: 15px;
+}
+
+.sidenav 
+{
+	display:block; 
+	position:fixed; 
+	width:189px;
+	background-color:#6e6e6e;
+	margin-left: -30px;
+}
+
+.article-sections
+{
+	list-style-type:none;
+	margin:0;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.section
+{
+display:block;
+font-weight:bold;
+color:#FFFFFF;
+width:189px;
+text-decoration:none;
+text-transform:uppercase;
+}
+
+a.section:hover,a.section:active,a.section:visited
+{
+background-color:#941a1e;
+text-decoration:none;
+color:#FFFFFF;
+}
+
+.section-spotlight-first
+{
+	padding-bottom: 10px;
+}
+
+.section-spotlight-nonfirst
+{
+	padding-top: 10px;
+	padding-bottom: 0;
+}
+
+#week-recent
+{
+	clear: both;
+    position: relative;
+    overflow: hidden;
+    width: 336px; 
+    margin: 16px 0 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background: #ededed;
+}
+
+.footer
+{
+	background-color:#BABABA;
+}
+
+.footlink
+{
+	color: #000000;
+}
+
+.section-img
+{
+	width: 197px;
+	height: 111px;
+}
+
+/* Phones */
+@media screen and (max-width:480px) {
+	div
+	{
+		display: block;
+	}
+
+	.boundary
+	{
+		margin-left: 0; 
+		margin-right: 0;
+		margin-top: 70px;
+	}
+
+	.sidenav 
+	{
+		width:100%;
+	}
+
+	.article-sections
+	{
+		list-style-type:none;
+		margin:0;
+		padding-top: 20px;
+		padding-bottom: 20px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.section
+	{
+		clear: both;
+		display:block;
+		width:100%;
+	}
+
+	.spotlight-image
+	{
+		width: 100%;
+		height: 98px !important;
+	}
+
+	.carousel-inner
+	{
+  		width:100%;
+  		max-height: 98px !important;
+	}
+
+	a.carousel-headline
+	{
+		font-size: 8px;
+	}
+}

@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'GARA';
+	src: url('./GARA.eot');
+	src: local('GARA'), url('./GARA.woff') format('woff'), url('./GARA.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_27090">Text with this font applied</p> */
+.fontsforweb_fontid_27090 {
+	font-family: 'GARA' !important;
+}
+
+/* Font downloaded from FontsForWeb.com */
