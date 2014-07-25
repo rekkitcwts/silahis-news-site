@@ -1,4 +1,5 @@
 <?php
+	require_once('silahis_backendsecurity.php');
 	$id_no = strip_tags(str_replace('\'', '\'\'', trim($_POST['idno'])));
 	$status = '';
 
@@ -9,7 +10,7 @@
 	}
 
 	include('Student.php');
-	include('Staff.php');
+	include_once('Staff.php');
 	require_once('silahis_connectvars.php');
 	$dbc = new Student(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$dbcStaff = new Staff(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);

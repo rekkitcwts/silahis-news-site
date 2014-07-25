@@ -73,11 +73,11 @@
                                 <i class="fa fa-th"></i> <span>Manage Staff</span>
                             </a>
                         </li>
-						<li>
+					<!--	<li>
                             <a href="#">
                                 <i class="fa fa-th"></i> <span>Manage Positions</span>
                             </a>
-                        </li>
+                        </li> -->
 						<?php
 							}
 							?>

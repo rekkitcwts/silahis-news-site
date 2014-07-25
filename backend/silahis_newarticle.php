@@ -1,4 +1,5 @@
 <?php
+	require_once('silahis_backendsecurity.php');
 	$errors = array();
 	$status = "";
 	require_once('silahis_connectvars.php');

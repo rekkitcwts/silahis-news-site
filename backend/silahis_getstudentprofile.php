@@ -1,4 +1,5 @@
 <?php
+	require_once('silahis_backendsecurity.php');
 	$id_no = strip_tags(str_replace('\'', '\'\'', trim($_POST['idno'])));
 
 	if (!preg_match('/^(GM-|\d{2})\d{2}-\d{4}$/', $id_no))

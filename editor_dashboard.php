@@ -1,6 +1,8 @@
 <?php
+    require_once('template/silahis_sessionstarter.php');
+    require_once('template/silahis_editorchecker.php');
 	$title = "Editor Dashboard";
-	require_once('template/silahis_sessionstarter.php');
+	
 	if (!isset($_SESSION['staff_id']))
 	{
 		header('Location: staff_login.php');

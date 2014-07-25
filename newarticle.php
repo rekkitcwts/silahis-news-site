@@ -199,7 +199,7 @@
                 // Replace the <textarea id="editor1"> with a CKEditor
                 // instance, using default configuration.
                 CKEDITOR.replace('articlebody', {
-					filebrowserBrowseUrl : 'backend/elfinder-2.0-rc1-fixed/elfinder.html', // eg. 'includes/elFinder/elfinder.html'
+					filebrowserBrowseUrl : 'backend/elfinder-2.0-rc1-fixed/elfinder.php', // eg. 'includes/elFinder/elfinder.html'
 					uiColor : '#9AB8F3',
 					language: 'en-au',
 					toolbar : 'Basic',

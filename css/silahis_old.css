@@ -1,0 +1,602 @@
+body {
+	padding-top: 50px;
+}
+
+#loginForm
+{
+	background-color: #eeeeee;
+}
+
+#search-form{
+	margin-top: -2px;
+	display: block;
+}
+
+#search-field {
+	font-size: 0.9em;
+    color: #5f574f;
+    width: 220px;
+    height: 20px;
+    padding-left: 10px;
+    border: 2px solid #e9e6df;
+    background-color: #fbfbf9;
+    border-radius: 8px;
+    position: relative;
+}
+
+#search-form #search-btn {
+    cursor: pointer;
+    border: 0;
+    height: 26px;
+    width: 26px;
+    background-color: transparent;
+    position: relative;
+  	right: 30px;
+}
+
+#search-form #search-btn i {
+    color: #5f574f;
+}
+
+.navbar-fixed-top
+{
+	background-color: #322c2c;
+}
+
+.navbar-default .navbar-nav > li > a {
+    background-color: rgba(0, 0, 0, 0);
+    color: #EEEEEE;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    background-color: rgba(0, 0, 0, 0);
+    color: #FFFFFF;
+}
+
+p, small, a, h1, h2, h3, h4, h5, h6, q, blockquote, li {
+	font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+}
+
+#footer p {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+/* Varying layouts begin here */
+/* Desktop CSS */
+hr
+{
+	margin-bottom: 1px; 
+	margin-top: 1px;
+}
+
+.img-responsive.two-col-news
+{
+	width: 227px;
+	height:142px;
+}
+
+.homepage-header-indicator
+{
+	margin-top: 0px;
+}
+
+a.thumb 
+{
+	display: block;
+	position: relative;
+}
+
+div
+{
+	display: block;
+}
+
+.img-width-340
+{
+	width: 149.12280702%;
+	height: 227px !important;
+}
+
+.img-width-340 img
+{
+	width: 100%;
+	height: 227px !important;
+}
+
+span.textOnImage 
+{
+	bottom: 0;
+	display: block;
+	left: 0;
+	padding: 5px 10px;
+	position: absolute;
+	right: 0;
+	font-size: 1.333em;
+	font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	text-shadow: 1px 1px 2px #000;
+	line-height: 1;
+	background: #111;
+	background: rgba(17,17,17,0.8);
+}
+
+.carousel-caption{
+    font-size: 1.333em;
+	font-family: 'ProximaNova', Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	text-shadow: 1px 1px 2px #000;
+	line-height: 1;
+	background: #111;
+	background: rgba(17,17,17,0.8);
+}
+
+a.carousel-headline
+{
+	color: #ffffff;
+}
+
+.carousel-caption
+{
+	left: 0;
+	bottom: 0;
+	width: 485px;
+}
+
+.carousel-indicators
+{
+	bottom: 5px;
+}
+
+.img-responsive.two-col-feat
+{
+	padding-left: 0;
+	padding-right: 0;
+	width: 120%;
+}
+
+.boundary
+{
+	margin-left: -10.18018018%;
+	margin-right: -10.18018018%;
+}
+
+.fixup
+{
+	width: 100%;
+}
+
+.spotlight-image
+{
+	width: 100%;
+	height: 303px !important;
+}
+
+.carousel-inner{
+  width:100%;
+  max-height: 303px !important;
+}
+
+a.thumb:link, a.thumb:visited 
+{
+	color: #eee;
+}
+
+li#search
+{
+	padding-top: 15px;
+}
+
+.article-sections li
+{
+    border-bottom: 1px solid #ccc;
+    margin-left: -20.642201835%;
+    width: 86.697247706%;
+}
+
+.article-sections li a
+{
+    text-decoration: none;
+    display: block;
+    padding: 10px 5.291005291% 10px;
+    color: #111;
+}
+
+.article-sections li a.active, .article-sections li a:hover
+{
+    background-color:#941a1e;
+	text-decoration:none;
+	color:#FFFFFF;
+}
+
+.section-spotlight-first
+{
+	padding-bottom: 10px;
+}
+
+.section-spotlight-nonfirst
+{
+	padding-top: 10px;
+	padding-bottom: 0;
+}
+
+#week-recent
+{
+	clear: both;
+    position: relative;
+    overflow: hidden;
+    width: 336px; 
+    margin: 16px 0 16px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background: #ededed;
+}
+
+#week-recent ul li
+{
+	padding: 10px;
+}
+
+.footer
+{
+	background-color:#BABABA;
+}
+
+.footlink
+{
+	color: #000000;
+}
+
+.section-img
+{
+	width: 197px;
+	height: 111px;
+}
+/* Desktop CSS ends here */
+
+/* iPads? */
+@media screen and (min-width:621px) and (max-width:767px) {
+	
+	.article-sections
+	{
+		float: left;
+	}
+
+	.boundary, .clear
+	{
+		clear: both;
+	}
+}
+
+/* Smartphones */
+@media screen (min-width:421px) and (max-width:620px) {
+	div
+	{
+		display: block;
+	}
+
+	.boundary
+	{
+		margin-left: 0;
+		margin-right: 0;
+		margin-top: 0px;
+	}
+
+	.article-sections li
+	{
+		margin-right: 5%;
+		width:120%;
+	} 
+
+	.article-sections
+	{
+		list-style-type:none;
+		padding-top: 0px;
+		padding-bottom: 20px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.section
+	{
+		clear: both;
+		display:block;
+		width:100%;
+	}
+
+	#news-spotlight
+	{
+		margin-left: -52px;
+	/*	width: 160%; */
+		height: 350px !important;
+	}
+
+	.img-width-340
+	{
+		margin-left: -52px;
+		width: 120%;
+		height: 120px;
+	}
+
+	img.spotlight-image, .carousel-inner
+	{
+	}
+
+	.carousel-caption
+	{
+		width: 100%;
+		background: rgba(17,17,17,0.5);
+	}
+
+	.carousel-caption h4 a
+	{
+    	font-size: 0.8em;
+	}
+
+	.homepage-heading, #news-latest, .homepage-header-indicator, .articleHead, .byline, .datePublished, #disqus_thread, .img-responsive.main-image, small.teaser, #articleBodyContent, #range-top-stories, #features, .editorialbox, .sectionHeader, .col-md-12.section-spotlight-first, .col-md-12.section-spotlight-nonfirst, .col-sm-6.latest-section-articles, #week-recent
+	{
+		margin-left: -9.5833333333%;
+	}
+
+	hr
+	{
+		display: none;
+	}
+
+	.two-col-news
+	{
+		width: 100% !important;
+	}
+
+	img.img-responsive
+	{
+		margin-left: -15px;
+		height: 350px !important;
+	}
+
+	#news-latest div.col-md-6 h3, #news-latest div.col-md-6 p
+	{
+		margin-left: -15px;
+	}
+
+	.fixup
+	{
+		width: 120%;
+	}
+
+	div.row.latest-feature-articles
+	{
+		margin-left: -66px;
+		margin-top: -10px;
+	}
+
+	#range-top-stories, #features
+	{
+		width: 120%;
+	}
+
+	small.teaser
+	{
+		display: block;
+	}
+
+	#container-editorial-promotion
+	{
+		display: block;
+		width: 97%;
+	}
+
+	#container-editorial-promotion.container-editorial-promotion ul li h3 a.story img
+	{
+		width:85%;
+		height: 350px !important;
+	}
+
+#container-editorial-promotion.container-editorial-promotion ul li h3 a.story
+	{
+		font-size: 10px;
+		overflow: hidden;
+	}
+
+	.col-md-12.section-spotlight-first
+	{
+		margin-left: -63px;
+	}
+
+	.sectionTeaser
+	{
+		margin-left: -16px;
+	}
+
+	.section-spotlight-titles
+	{
+		margin-left: -10px;
+	}
+
+	.img-responsive.section-img
+	{
+		margin-left: -20px;
+		width: 140%;
+		margin-right: 0;
+	}
+
+	.col-sm-6.latest-section-articles, .col-sm-6.latest-section-exclusive
+	{
+		margin-left: -80px;
+		margin-right: 0;
+		width: 120%;
+	}
+
+	#week-recent
+	{
+		width: 120%;
+	}
+}
+
+@media screen and (max-width:420px) {
+	div
+	{
+		display: block;
+	}
+
+	.boundary
+	{
+		margin-left: 0; 
+		margin-right: 0;
+		margin-top: 0px;
+	}
+
+	.article-sections li
+	{
+		margin-right: -4px;
+		width:130%;
+	} 
+
+	.article-sections
+	{
+		list-style-type:none;
+		margin:0;
+		padding-top: 0px;
+		padding-bottom: 20px;
+		padding-left: 0;
+		padding-right: 0;
+	}
+
+	.section
+	{
+		clear: both;
+		display:block;
+		width:100%;
+	}
+
+	#news-spotlight
+	{
+		margin-left: -52px;
+	/*	width: 160%; */
+		height: 150px !important;
+	}
+
+	.img-width-340
+	{
+		margin-left: -52px;
+		width: 120%;
+		height: 120px;
+	}
+
+	img.spotlight-image, .carousel-inner
+	{
+		height: 150px !important;
+	}
+
+	.carousel-caption
+	{
+		width: 100%;
+		background: rgba(17,17,17,0.5);
+	}
+
+	.carousel-caption h4 a
+	{
+    	font-size: 0.8em;
+	}
+
+	.homepage-heading, #news-latest, .homepage-header-indicator, .articleHead, .byline, .datePublished, #disqus_thread, .img-responsive.main-image, small.teaser, #articleBodyContent, #range-top-stories, #features, .editorialbox, .sectionHeader, .col-md-12.section-spotlight-first, .col-md-12.section-spotlight-nonfirst, .col-sm-6.latest-section-articles, #week-recent
+	{
+		margin-left: -52px;
+	}
+
+	hr
+	{
+		display: none;
+	}
+
+	.two-col-news
+	{
+		width: 100% !important;
+	}
+
+	img.img-responsive
+	{
+		margin-left: -15px;
+		height: 150px !important;
+	}
+
+	#news-latest div.col-md-6 h3, #news-latest div.col-md-6 p
+	{
+		margin-left: -15px;
+	}
+
+	.fixup
+	{
+		width: 120%;
+	}
+
+	div.row.latest-feature-articles
+	{
+		margin-left: -66px;
+		margin-top: -10px;
+	}
+
+	#range-top-stories, #features
+	{
+		width: 120%;
+	}
+
+	small.teaser
+	{
+		display: block;
+	}
+
+	#container-editorial-promotion
+	{
+		display: block;
+		width: 97%;
+	}
+
+	#container-editorial-promotion.container-editorial-promotion ul li h3 a.story img
+	{
+		width:85%;
+		height: 150px !important;
+	}
+
+#container-editorial-promotion.container-editorial-promotion ul li h3 a.story
+	{
+		font-size: 10px;
+		overflow: hidden;
+	}
+
+	.col-md-12.section-spotlight-first
+	{
+		margin-left: -63px;
+	}
+
+	.sectionTeaser
+	{
+		margin-left: -16px;
+	}
+
+	.section-spotlight-titles
+	{
+		margin-left: -10px;
+	}
+
+	.img-responsive.section-img
+	{
+		margin-left: -20px;
+		width: 140%;
+		margin-right: 0;
+	}
+
+	.col-sm-6.latest-section-articles, .col-sm-6.latest-section-exclusive
+	{
+		margin-left: -80px;
+		margin-right: 0;
+		width: 120%;
+	}
+
+	#week-recent
+	{
+		width: 120%;
+	}
+}
+
+/* Feature phone CSS ends here */

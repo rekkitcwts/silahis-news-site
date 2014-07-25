@@ -1,11 +1,16 @@
 <?php
+error_reporting(-1);
+ini_set('display_errors', 'On');
+require_once('template/silahis_sessionstarter.php');
+    require_once('template/silahis_adviserchecker.php');
+
 	$title = "Manage Staff Members";
 	require_once('backend/silahis_connectvars.php');
     include_once('backend/DBConnection.php');
     $dbc = new DBConnection(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
     $constituentArray = $dbc->get_results("SELECT * FROM staff WHERE staff_id NOT IN (SELECT staff_position.staff_id FROM staff_position)");
     $positions = $dbc->get_results("SELECT * FROM position");
-	require_once('template/silahis_sessionstarter.php');
+	
 	if (!isset($_SESSION['staff_id']))
 	{
 		header('Location: staff_login.php');
@@ -14,6 +19,7 @@
 //	require_once('template/silahis_adviserchecker.php');
 	require_once('template/silahis_header_staffpanel.php');
 	require_once('template/silahis_nav_adminpanel.php');
+
 //	echo $_SESSION['staff_username'];
 ?>
 <div class="wrapper row-offcanvas row-offcanvas-left">

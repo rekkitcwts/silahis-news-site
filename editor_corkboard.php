@@ -1,6 +1,8 @@
 <?php
+require_once('template/silahis_sessionstarter.php');
+require_once('template/silahis_editorchecker.php');
 	$title = "Editor's Corkboard";
-	require_once('template/silahis_sessionstarter.php');
+	
 	if (!isset($_SESSION['staff_id']))
 	{
 		header('Location: staff_login.php');
@@ -9,7 +11,7 @@
 	require_once('template/silahis_header_staffpanel.php');
 	require_once('template/silahis_nav_adminpanel.php');
 	include_once('backend/DBConnection.php');
-	require_once('backend/silahis_connectvars.php');
+//	require_once('backend/silahis_connectvars.php');
 	$dbc = new DBConnection(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$articlesArray = $dbc->get_results("SELECT article.article_title, article.article_id, staff.staff_lname, staff.staff_fname, articletype.type_name, article.date_submitted FROM article INNER JOIN articletype ON (article.article_type = articletype.type_id) INNER JOIN staff ON (article.author = staff.staff_id) WHERE deleted = 'false' ORDER BY article.date_submitted DESC");
 ?>

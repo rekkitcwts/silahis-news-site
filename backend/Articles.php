@@ -117,7 +117,7 @@
 
 		public function prevDaysRecentArticles()
 		{
-			return $this->get_results("SELECT d,article_id, date_published FROM (SELECT DISTINCT ON (d) date_trunc('day',date_published)::date as d ,article_id, date_published FROM article ORDER BY d desc, date_published desc) s ORDER BY d desc LIMIT 7;");
+			return $this->get_results("SELECT d,article_id, date_published FROM (SELECT DISTINCT ON (d) date_trunc('day',date_published)::date as d ,article_id, date_published FROM article ORDER BY d desc, date_published desc) s ORDER BY d desc LIMIT 4;");
 		}
 
 		public function incrementViews($article_id)
@@ -198,6 +198,11 @@
 		public function setArticleType($article_id, $newType)
 		{
 			$this->query("UPDATE article SET article_type = '$newType' WHERE article_id = $article_id");
+		}
+
+		public function getArticleTypeName($article_id)
+		{
+			return $this->get_var("SELECT articletype.type_name FROM article INNER JOIN articletype ON (article.article_type = articletype.type_id) WHERE article_id = $article_id");
 		}
 
 		public function getArticleBody($article_id)

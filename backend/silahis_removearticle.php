@@ -1,4 +1,5 @@
 <?php
+	require_once('silahis_backendsecurity.php');
 	include_once('DBConnection.php');
 	include_once('Articles.php');
 	require_once('silahis_connectvars.php');

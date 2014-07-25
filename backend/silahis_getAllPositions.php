@@ -1,4 +1,5 @@
 <?php
+	require_once('silahis_backendsecurity.php');
 	require_once('silahis_connectvars.php');
 	include('Position.php');
 

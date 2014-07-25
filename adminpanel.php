@@ -1,14 +1,19 @@
 <?php
+error_reporting(-1);
+ini_set('display_errors', 'On');
+require_once('template/silahis_sessionstarter.php');
+    require_once('template/silahis_adviserchecker.php');
+
 	$title = "Admin Panel";
-	require_once('template/silahis_sessionstarter.php');
+	
 	if (!isset($_SESSION['staff_id']))
 	{
 		header('Location: staff_login.php');
 		exit();
 	}
-//	require_once('template/silahis_adviserchecker.php');
 	require_once('template/silahis_header_staffpanel.php');
 	require_once('template/silahis_nav_adminpanel.php');
+
 //	echo $_SESSION['staff_username'];
 ?>
         <div class="wrapper row-offcanvas row-offcanvas-left">

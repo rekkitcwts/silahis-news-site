@@ -24,10 +24,10 @@ function loginCheck()
 				$("p#loginError").text('');
 				if ((response.position == "Adviser") || (response.position == "Editor-In-Chief"))
 					window.location = 'adminpanel.php';
-				if ((response.position == "News Writer") || (response.position == "Feature Writer"))
-					window.location = 'writer_dashboard.php';
-				if ((response.position == "News Editor") || (response.position == "Feature Editor") || (response.position == "Associate Editor"))
+				else if ((response.position == "News Editor") || (response.position == "Feature Editor") || (response.position == "Associate Editor"))
 					window.location = 'editor_dashboard.php';
+				else if ((response.position == "News Writer") || (response.position == "Feature Writer"))
+					window.location = 'writer_dashboard.php';
 			}
 			else
 			{

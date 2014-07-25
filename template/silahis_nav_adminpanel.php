@@ -1,6 +1,6 @@
 <?php
 	require_once('backend/silahis_connectvars.php');
-    include('backend/Staff.php');
+    include_once('backend/Staff.php');
     include('backend/Student.php');
     $dbcStaff = new Staff(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
     $dbcStudent = new Student(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
