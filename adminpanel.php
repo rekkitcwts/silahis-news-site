@@ -46,7 +46,7 @@ require_once('template/silahis_sessionstarter.php');
                                         0
                                     </h3>
                                     <p>
-                                        Unapproved Articles
+                                        Pending Articles
                                     </p>
                                 </div>
                                 <div class="icon">
@@ -60,25 +60,6 @@ require_once('template/silahis_sessionstarter.php');
                         <div class="col-lg-3 col-xs-6">
                             <!-- small box -->
                             <div class="small-box bg-green">
-                                <div class="inner">
-                                    <h3>
-                                        0
-                                    </h3>
-                                    <p>
-                                        Disapproved Articles
-                                    </p>
-                                </div>
-                                <div class="icon">
-                                    <i class="ion ion-stats-bars"></i>
-                                </div>
-                                <a href="#" class="small-box-footer" title="These are the articles that are disapproved due to some reasons (e.g. needs clarification and editing)">
-                                    More info <i class="fa fa-arrow-circle-right"></i>
-                                </a>
-                            </div>
-                        </div><!-- ./col -->
-                        <div class="col-lg-3 col-xs-6">
-                            <!-- small box -->
-                            <div class="small-box bg-yellow">
                                 <div class="inner">
                                     <h3>
                                         0
@@ -103,13 +84,13 @@ require_once('template/silahis_sessionstarter.php');
                                         0
                                     </h3>
                                     <p>
-                                        Legally Taken Down
+                                        Deleted Articles
                                     </p>
                                 </div>
                                 <div class="icon">
-                                    <i class="ion ion-pie-graph"></i>
+                                    <i class="ion ion-trash-a"></i>
                                 </div>
-                                <a href="#" class="small-box-footer" title="These are the articles that are used to be on the site, but was taken down due to legal reasons and oligarchy.">
+                                <a href="#" class="small-box-footer" title="Articles that were deleted regardless of publishing status">
                                     More info <i class="fa fa-arrow-circle-right"></i>
                                 </a>
                             </div>

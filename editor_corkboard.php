@@ -11,6 +11,15 @@ require_once('template/silahis_editorchecker.php');
 	require_once('template/silahis_header_staffpanel.php');
 	require_once('template/silahis_nav_adminpanel.php');
 	include_once('backend/DBConnection.php');
+
+    require_once('backend/anti_csrf.php');
+
+    $csrf = new AntiCSRF();
+ 
+ 
+    // Generate Token Id and Valid
+    $token_id = $csrf->get_token_id();
+    $token_value = $csrf->get_token($token_id);
 //	require_once('backend/silahis_connectvars.php');
 	$dbc = new DBConnection(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 	$articlesArray = $dbc->get_results("SELECT article.article_title, article.article_id, staff.staff_lname, staff.staff_fname, articletype.type_name, article.date_submitted FROM article INNER JOIN articletype ON (article.article_type = articletype.type_id) INNER JOIN staff ON (article.author = staff.staff_id) WHERE deleted = 'false' ORDER BY article.date_submitted DESC");
@@ -96,6 +105,7 @@ require_once('template/silahis_editorchecker.php');
       </div>
       <div class="modal-body">
         <p>Are you sure you want to remove this article? This cannot be undone.</p>
+        <input type="hidden" name="token" id="token" value="<?php echo $token_value; ?>" />
         <input type="hidden" name="articleIDhidden" id="articleIDhidden" value="" />
       </div>
       <div class="modal-footer">

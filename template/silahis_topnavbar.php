@@ -2,11 +2,11 @@
   error_reporting(-1);
 ini_set('display_errors', 'On');
 ?>
-        <div class="container-fluid" style="margin-top: 52px;"> 
+        <div class="container-fluid" style="margin-top: 51px;"> 
           <!-- Fixed navbar -->
           <div class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -14,7 +14,7 @@ ini_set('display_errors', 'On');
               </button>
               <a class="navbar-brand" href="index.php"><img alt="Silahis Logo" src="img/SilahisHeader.png" style="margin-top:-15px; height: 50px;" /></a>
             </div>
-            <div class="navbar-collapse collapse">
+            <div id="main-nav" class="navbar-collapse collapse">
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="http://msuiit.edu.ph">msuiit.edu.ph</a></li>
                 <li><a href="http://my.iit.edu.ph">My.IIT</a></li>

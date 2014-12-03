@@ -28,6 +28,9 @@
         <!-- Theme style -->
         <link href="css/AdminLTE.css" rel="stylesheet" type="text/css" />
 
+        <link rel="stylesheet" href="css/medium-editor.css">
+        <link rel="stylesheet" href="css/themes/default.css">
+
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -36,6 +39,8 @@
         <![endif]-->
 		
 		<script src="js/jquery-1.10.2.js"></script>
+    <!--    <script src="js/medium-editor.js"></script>
+        <script src="js/medium-editor-insert-plugin.all.js"></script> -->
 		<script src="js/plugins/ckeditor/ckeditor.js"></script>
 		
 	</head>

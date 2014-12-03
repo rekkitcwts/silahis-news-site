@@ -68,7 +68,7 @@ $dbcArticles = new Article(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
                     echo '<img class="img-responsive" src="'.$dbcArticles->getMainPhotoURL($sectionSpotlightArray[$s]['article_id']).'" alt="'.$dbcArticles->getTeaser($sectionSpotlightArray[$s]['article_id']).'" />';
                     echo '</div>';
                     echo '<div class="col-xs-12 col-sm-6">';
-                    echo '<h2><a href="article.php?article=' . $sectionSpotlightArray[$s]['article_id'] . '">' . $dbcArticles->getTitle($sectionSpotlightArray[$s]['article_id']) . '</a></h2>';
+                    echo '<h5><strong><a href="article.php?article=' . $sectionSpotlightArray[$s]['article_id'] . '">' . $dbcArticles->getTitle($sectionSpotlightArray[$s]['article_id']) . '</a></strong></h5>';
                     echo '<p>' . $dbcArticles->getTeaser($sectionSpotlightArray[$s]['article_id']) . '</p>';
                     echo '</div>';
                     echo '</div>';
@@ -126,10 +126,18 @@ $dbcArticles = new Article(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 				}
 				else
 				{
-					for ($latestLeft=0; $latestLeft < 2 ; $latestLeft++) 
-					{ 
-						echo '<h3><a href="article.php?article=' . $sectionLatestArticlesArray[$latestLeft]['article_id'] . '">'.$dbcArticles->getTitle($sectionLatestArticlesArray[$latestLeft]['article_id']).'</a></h3>';
-						echo '<p class="hidden-xs">' . $dbcArticles->getTeaser($sectionLatestArticlesArray[$latestLeft]['article_id']) . '</p>';
+					if (count($sectionLatestArticlesArray) == 1) 
+					{
+						echo '<h3><a href="article.php?article=' . $sectionLatestArticlesArray[0]['article_id'] . '">'.$dbcArticles->getTitle($sectionLatestArticlesArray[0]['article_id']).'</a></h3>';
+						echo '<p class="hidden-xs">' . $dbcArticles->getTeaser($sectionLatestArticlesArray[0]['article_id']) . '</p>';
+					}
+					else
+					{
+						for ($latestLeft=0; $latestLeft < 2 ; $latestLeft++) 
+						{
+							echo '<h3><a href="article.php?article=' . $sectionLatestArticlesArray[$latestLeft]['article_id'] . '">'.$dbcArticles->getTitle($sectionLatestArticlesArray[$latestLeft]['article_id']).'</a></h3>';
+							echo '<p class="hidden-xs">' . $dbcArticles->getTeaser($sectionLatestArticlesArray[$latestLeft]['article_id']) . '</p>';
+						}
 					}
 				}
 			?>

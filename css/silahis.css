@@ -23,15 +23,15 @@ li#search
 {
     padding-top: 15px;
 }
-/*
-#silahis-menu
+html body div.container-fluid div.navbar.navbar-default.navbar-fixed-top div#main-nav.navbar-collapse.collapse ul.nav.navbar-nav.navbar-right li a
 {
-	height: 100%;
-	left: 0;
-    position: fixed;
-    top: 0;
+	color: #ffffff;
 }
-*/
+
+.homepage-article-title
+{
+	height: 66px;
+}
 
 #events-calendar
 {
@@ -97,33 +97,28 @@ li#search
     color: #ffffff;
     padding: 2px;
 }
-/*
-#popular-article-spotlight h1 
-{
-    background-color: #ededed;
-    margin-bottom: 0;
-    padding: 5px;
+
+
+
+.quick-nav-title h4 {
+  color: inherit;
+  margin: 0;
+  padding: 0;
 }
 
-.spotlight-content-sidebar
-{
-	background-color: #ededed;
-	padding: 5px;
-}
-*/
-.article-sections ul li
+.quick-nav-link ul li
 {
 	border-bottom: 1px solid #ccc;
 }
 
-.article-sections ul li a
+.quick-nav-link ul li a
 {
 	display: block;
 	padding: 10px;
 	color: #000000;
 }
 
-.article-sections ul li a.active, .article-sections li a:hover 
+.quick-nav-link ul li a.active, .quick-nav-link ul li a:hover 
 {
   	background-color: #941a1e;
   	color: #ffffff;
@@ -220,9 +215,24 @@ li#search
 	/* DANGER! You need to create a media query rule for this, Rigby... */
 }
 
+.img-responsive.homepage-latest-article-img
+{
+	height: 84px;
+}
+
 /* End of little details */
 
 @media (max-width: 768px) {
+	.quick-nav-title {
+  background-color: #f2f1eb;
+  border-radius: 0;
+  color: #941a1e;
+  display: block;
+  margin: 0;
+  padding: 15px;
+  width: 100%;
+}
+
 	#carousel-container, #carousel-homepage
 	{
 		margin: 0px;
@@ -239,5 +249,27 @@ li#search
 	{
 		font-size: 1.5em;
 		width: 100%;
+	}
+
+	.carousel-caption{
+		margin: 0px;
+		max-width: 100%;
+		min-width: 100%;
+		width: 100vw;
+		background-color: rgba(148,26,30, 0.5);
+	}
+}
+
+@media (max-width: 320px) {
+	#carousel-homepage img, .article-content-photo img
+	{
+		max-width: 600px;
+		margin: auto;
+		height: 218px;
+	}
+
+	.headertitle
+	{
+		margin-left: -4.6875%;
 	}
 }

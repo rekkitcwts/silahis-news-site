@@ -13,6 +13,14 @@
 	}
 	require_once('template/silahis_header_staffpanel.php');
 	require_once('template/silahis_nav_adminpanel.php');
+	require_once('backend/anti_csrf.php');
+
+	$csrf = new AntiCSRF();
+ 
+ 
+	// Generate Token Id and Valid
+	$token_id = $csrf->get_token_id();
+	$token_value = $csrf->get_token($token_id);
 ?>
         <div class="wrapper row-offcanvas row-offcanvas-left">
             <?php require_once('template/silahis_navleft_adminpanel.php'); ?>
@@ -100,19 +108,21 @@
 											// teaser is NOW required
 											$errors[] = "TEASER_REQUIRED";
 										}
-										if (!empty($articletitle) && !empty($articleBody) && !empty($imagename) && !empty($caption)) //both title and body are not empty, and there are images
+										if (!$csrf->check_valid('post', false)) 
+										{
+											$errors[] = "CSRF";
+										}
+										if (!empty($articletitle) && !empty($articleBody) && !empty($imagename) && !empty($caption) && $csrf->check_valid('post')) //both title and body are not empty, and there are images
 										{
 											// OK!
 											$insertArticle = new Article(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 											$newArticle = array('author' => $author, 'title' => $articletitle, 'type' => $articleTypeID, 'body' => $articleBody, 'main_image' => $imagename, 'teaser' => $caption);
 											$insertArticle->createArticle($newArticle);
-											//$insertArticle->createArticle($author, $articletitle, $articleTypeID, $articleBody, $imagename, $caption);
 
 											$status = "AUSTRALIA";
 											// clear the fields
 											$articletitle_unescaped = "";
 											$articleBody = "";
-										//	pg_close($dbc);
 										}
 										if (count($errors) > 0)
 										{
@@ -129,6 +139,8 @@
 													echo "The file should be a JPEG, GIF, or PNG image. <br />";
 												else if ($errors[$i] == "TEASER_REQUIRED")
 													echo "The article teaser is required. <br />";
+												else if ($errors[$i] == "CSRF")
+													echo "Cross-site forgery detected!. <br />";
 												else
 													echo $errors[$i] . '<br />';
 											}
@@ -143,6 +155,7 @@
 									?>
 									<div id="imagetest"></div>
 									<form name="articleuploader" id="articleuploader" method="POST" enctype="multipart/form-data" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+										<input type="hidden" id="token" name="<?php echo $token_id; ?>" value="<?php echo $token_value; ?>" />
 										<div class="form-group">
 											<label for="title">Title/Headline</label>
 											<input type="text" class="form-control" id="title" name="title" value="<?php if (!empty($articletitle_unescaped)) echo $articletitle_unescaped; ?>" />
@@ -174,16 +187,7 @@
 											<label for="imagecaption">Teaser</label>
 											<input type="text" class="form-control" id="imagecaption" name="imagecaption" />
 										</div>
-										<!--&nbsp;&nbsp;&nbsp;
-										<div class="form-group">
-											<div class="checkbox">
-												<label>
-													<input type="checkbox" id="terms" name="terms" value="agreed" /> I agree that I will be accountable for my article if in case legal action is taken by elitists and oligarchs.
-												</label>
-											</div>
-										</div>-->
 										<input type="submit" class="btn btn-primary" value="Submit article" name="submitArticle" />
-										<!--<button type="button" class="btn btn-primary" id="submitArticle">Submit Article</button>-->
 									</form>
                                 </div><!-- /.box-body -->
                             </div><!-- /.box -->

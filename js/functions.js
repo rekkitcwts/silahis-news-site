@@ -2,16 +2,21 @@ var baseurl = '127.0.0.1/silahis-news-site';
 
 function loginCheck()
 {
+	var id = $('#token').attr('name');
+	var value = $('#token').val();
+	var token = {id : value}
 	var staff_username = $('#username').val();
 	var staff_password = $('#password').val();
-	// alert(staff_username + ', ' + staff_password);
+	var post = {
+		id: value,
+		username: staff_username,
+		password: staff_password
+	};
+
 	$.ajax({
 		url: './backend/silahis_login.php',
 		type: "POST",
-		data: {
-			username: staff_username,
-			password: staff_password
-		},
+		data: post,
 		dataType: "json",
 		async: true,
 		success: function(response)
@@ -185,10 +190,12 @@ function showRemoveArticleModal(articleID)
 function removeArticle()
 {
 	var articleID = $("#articleIDhidden").val();
+	var token = $("#token").val();
 	$.ajax({
 		url: './backend/silahis_removearticle.php',
 		type: "POST",
 		data: {
+			id: token,
 			article_id: articleID
 		},
 		dataType: "text",

@@ -33,7 +33,14 @@ require_once('template/silahis_editorchecker.php');
 	}
 	require_once('template/silahis_header_staffpanel.php');
 	require_once('template/silahis_nav_adminpanel.php');
-//	echo $_SESSION['staff_username'];
+	require_once('backend/anti_csrf.php');
+
+	$csrf = new AntiCSRF();
+ 
+ 
+	// Generate Token Id and Valid
+	$token_id = $csrf->get_token_id();
+	$token_value = $csrf->get_token($token_id);
 ?>
         <div class="wrapper row-offcanvas row-offcanvas-left">
             <?php require_once('template/silahis_navleft_adminpanel.php'); ?>
@@ -122,7 +129,11 @@ require_once('template/silahis_editorchecker.php');
 											// teaser is NOW required
 											$errors[] = "TEASER_REQUIRED";
 										}
-										if (!empty($articletitle) && !empty($articleBody) && !empty($imagename) && !empty($caption)) //both title and body are not empty, and there are images
+										if (!$csrf->check_valid('post', false)) 
+										{
+											$errors[] = "CSRF";
+										}
+										if ($csrf->check_valid('post', false) && !empty($articletitle) && !empty($articleBody) && !empty($imagename) && !empty($caption)) //both title and body are not empty, and there are images
 										{
 											// OK!
 											$updateArticle = new Article(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
@@ -155,6 +166,8 @@ require_once('template/silahis_editorchecker.php');
 													echo "The file should be a JPEG, GIF, or PNG image. <br />";
 												else if ($errors[$i] == "TEASER_REQUIRED")
 													echo "The article teaser is required. <br />";
+												else if ($errors[$i] == "CSRF")
+													echo "Cross-site forgery detected!. <br />";
 												else
 													echo $errors[$i] . '<br />';
 											}
@@ -177,6 +190,7 @@ require_once('template/silahis_editorchecker.php');
 									?>
 									<div id="imagetest"></div>
 									<form name="articleuploader" id="articleuploader" method="POST" enctype="multipart/form-data" action="<?php echo $_SERVER['PHP_SELF'] . '?article=' . $articleID; ?>">
+										<input type="hidden" id="token" name="<?php echo $token_id; ?>" value="<?php echo $token_value; ?>" />
 										<div class="form-group">
 											<label for="title">Title/Headline</label>
 											<input type="text" class="form-control" id="title" name="title" value="<?php if (isset($articletitle)) echo ($articletitle); else echo ($currentArticleTitle); ?>" />
@@ -281,7 +295,16 @@ require_once('template/silahis_editorchecker.php');
 					filebrowserBrowseUrl : 'backend/elfinder-2.0-rc1-fixed/elfinder.php', // eg. 'includes/elFinder/elfinder.html'
 					uiColor : '#9AB8F3',
 					language: 'en-au',
-					toolbar : 'Basic'
+					toolbar : 'Basic',
+					allowedContent:
+						'h1 h2 h3 p blockquote strong em;' +
+						'a[!href];' +
+						'img(img-responsive)[!src,alt];' +
+						'table tr th td caption;' +
+						'span{!font-family};' +
+						'span{!color};' +
+						'span(!marker);' +
+						'del ins'
 				});
 				
             });

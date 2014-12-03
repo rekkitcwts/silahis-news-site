@@ -15,7 +15,7 @@ $latestEditorial = $dbcArticles->getLatestArticles("editorial",1);
 $latestLiterary = $dbcArticles->getLatestArticles("literary",1);
 ?>
 <!-- ORIGINAL END -->
-<h1>Spotlight</h1>
+<h1 class="headertitle">Spotlight</h1>
 <!-- CAROUSEL -->
 <div class="row">
 	<div id="carousel-container" class="col-lg-12 col-md-12 col-sm-12">
@@ -83,10 +83,13 @@ $latestLiterary = $dbcArticles->getLatestArticles("literary",1);
 		<h1>News</h1>
 	</div>
 	<div class="col-xs-12 col-sm-6">
-		<a href="article.php?article=<?php echo $latestNews[0]['article_id']; ?>"><h4><?php echo $dbcArticles->getTitle($latestNews[0]['article_id']); ?></h4></a>
+		<div class="homepage-article-title">
+			<a href="article.php?article=<?php echo $latestNews[0]['article_id']; ?>"><h4><?php echo $dbcArticles->getTitle($latestNews[0]['article_id']); ?></h4></a>
+		</div>
+		
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
-				<img class="img-responsive" src="<?php echo $dbcArticles->getMainPhotoURL($latestNews[0]['article_id']); ?>" alt="<?php echo $dbcArticles->getTeaser($latestNews[0]['article_id']); ?>" />
+				<img class="img-responsive homepage-latest-article-img" src="<?php echo $dbcArticles->getMainPhotoURL($latestNews[0]['article_id']); ?>" alt="<?php echo $dbcArticles->getTeaser($latestNews[0]['article_id']); ?>" />
 			</div>
 			<div class="col-xs-12 col-sm-6">
 				<p><?php echo $dbcArticles->getTeaser($latestNews[0]['article_id']); ?></p>
@@ -94,10 +97,12 @@ $latestLiterary = $dbcArticles->getLatestArticles("literary",1);
 		</div>
 	</div>
 	<div class="col-xs-12 col-sm-6">
-		<a href="article.php?article=<?php echo $latestNews[1]['article_id']; ?>"><h4><?php echo $dbcArticles->getTitle($latestNews[1]['article_id']); ?></h4></a>
+		<div class="homepage-article-title">
+			<a href="article.php?article=<?php echo $latestNews[1]['article_id']; ?>"><h4><?php echo $dbcArticles->getTitle($latestNews[1]['article_id']); ?></h4></a>
+		</div>
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
-				<img class="img-responsive" src="<?php echo $dbcArticles->getMainPhotoURL($latestNews[1]['article_id']); ?>" alt="<?php echo $dbcArticles->getTeaser($latestNews[1]['article_id']); ?>" />
+				<img class="img-responsive homepage-latest-article-img" src="<?php echo $dbcArticles->getMainPhotoURL($latestNews[1]['article_id']); ?>" alt="<?php echo $dbcArticles->getTeaser($latestNews[1]['article_id']); ?>" />
 			</div>
 			<div class="col-xs-12 col-sm-6">
 				<p><?php echo $dbcArticles->getTeaser($latestNews[1]['article_id']); ?></p>
@@ -114,7 +119,7 @@ $latestLiterary = $dbcArticles->getLatestArticles("literary",1);
 		<a href="<?php echo 'article.php?article=' . $latestFeatures[0]['article_id']; ?>"><h4><?php echo $dbcArticles->getTitle($latestFeatures[0]['article_id']); ?></h4></a>
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
-				<img class="img-responsive" src="<?php echo $dbcArticles->getMainPhotoURL($latestFeatures[0]['article_id']); ?>" alt="<?php echo $dbcArticles->getTeaser($latestFeatures[0]['article_id']); ?>" />
+				<img class="img-responsive homepage-latest-article-img" src="<?php echo $dbcArticles->getMainPhotoURL($latestFeatures[0]['article_id']); ?>" alt="<?php echo $dbcArticles->getTeaser($latestFeatures[0]['article_id']); ?>" />
 			</div>
 			<div class="col-xs-12 col-sm-6">
 				<p><?php echo $dbcArticles->getTeaser($latestFeatures[0]['article_id']); ?></p>
@@ -129,7 +134,7 @@ $latestLiterary = $dbcArticles->getLatestArticles("literary",1);
 		<a href="<?php echo 'article.php?article=' . $latestFeatures[1]['article_id']; ?>"><h4><?php echo $dbcArticles->getTitle($latestFeatures[1]['article_id']); ?></h4></a>
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
-				<img class="img-responsive" src="<?php echo $dbcArticles->getMainPhotoURL($latestFeatures[1]['article_id']); ?>" alt="<?php echo $dbcArticles->getTeaser($latestFeatures[1]['article_id']); ?>" />
+				<img class="img-responsive homepage-latest-article-img" src="<?php echo $dbcArticles->getMainPhotoURL($latestFeatures[1]['article_id']); ?>" alt="<?php echo $dbcArticles->getTeaser($latestFeatures[1]['article_id']); ?>" />
 			</div>
 			<div class="col-xs-12 col-sm-6">
 				<p><?php echo $dbcArticles->getTeaser($latestFeatures[1]['article_id']); ?></p>
@@ -180,7 +185,7 @@ $latestLiterary = $dbcArticles->getLatestArticles("literary",1);
 		{
 			echo '<div class="col-xs-12 col-lg-12 col-md-12 col-sm-4">';
 			echo '<div id="popular-opinion">';
-			echo '<h1>Editorial</h1>';
+			echo '<h1>Literary</h1>';
 			echo '<div class="row">';
 			echo '<div class="col-xs-12">';
 			echo '<div id="popular-opinion-content">';

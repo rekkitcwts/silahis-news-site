@@ -35,7 +35,7 @@
                                     <h3 class="box-title">Your Articles</h3>                                    
                                 </div><!-- /.box-header -->
                                 <div class="box-body table-responsive">
-								<a href="newarticle.php">Write a new article</a>
+								<a href="newarticle.php" class="btn btn-primary"><span class="ion-edit"></span> Write a new article</a>
                                     <table id="writersdesk" class="table table-bordered table-hover">
                                         <thead>
                                             <tr>
