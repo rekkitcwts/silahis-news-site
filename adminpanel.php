@@ -13,6 +13,12 @@ require_once('template/silahis_sessionstarter.php');
 	}
 	require_once('template/silahis_header_staffpanel.php');
 	require_once('template/silahis_nav_adminpanel.php');
+    require_once('backend/silahis_connectvars.php');
+    include_once('backend/Articles.php');
+    $dbc = new Article(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
+    $num_pending = $dbc->getNumOfArticles('pending');
+    $num_live = $dbc->getNumOfArticles('live');
+    $num_deleted = $dbc->getNumOfArticles('deleted');
 
 //	echo $_SESSION['staff_username'];
 ?>
@@ -43,7 +49,7 @@ require_once('template/silahis_sessionstarter.php');
                             <div class="small-box bg-aqua">
                                 <div class="inner">
                                     <h3>
-                                        0
+                                        <?php echo $num_pending; ?>
                                     </h3>
                                     <p>
                                         Pending Articles
@@ -62,7 +68,7 @@ require_once('template/silahis_sessionstarter.php');
                             <div class="small-box bg-green">
                                 <div class="inner">
                                     <h3>
-                                        0
+                                        <?php echo $num_live; ?>
                                     </h3>
                                     <p>
                                         Approved Articles
@@ -81,7 +87,7 @@ require_once('template/silahis_sessionstarter.php');
                             <div class="small-box bg-red">
                                 <div class="inner">
                                     <h3>
-                                        0
+                                        <?php echo $num_deleted; ?>
                                     </h3>
                                     <p>
                                         Deleted Articles

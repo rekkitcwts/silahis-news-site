@@ -116,7 +116,9 @@ $latestLiterary = $dbcArticles->getLatestArticles("literary",1);
 		<h1>Feature</h1>
 	</div>
 	<div class="col-xs-12 col-sm-6">
+		<div class="homepage-article-title">
 		<a href="<?php echo 'article.php?article=' . $latestFeatures[0]['article_id']; ?>"><h4><?php echo $dbcArticles->getTitle($latestFeatures[0]['article_id']); ?></h4></a>
+		</div>
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
 				<img class="img-responsive homepage-latest-article-img" src="<?php echo $dbcArticles->getMainPhotoURL($latestFeatures[0]['article_id']); ?>" alt="<?php echo $dbcArticles->getTeaser($latestFeatures[0]['article_id']); ?>" />
@@ -131,7 +133,9 @@ $latestLiterary = $dbcArticles->getLatestArticles("literary",1);
 	{
 ?>
 	<div class="col-xs-12 col-sm-6">
+		<div class="homepage-article-title">
 		<a href="<?php echo 'article.php?article=' . $latestFeatures[1]['article_id']; ?>"><h4><?php echo $dbcArticles->getTitle($latestFeatures[1]['article_id']); ?></h4></a>
+		</div>
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
 				<img class="img-responsive homepage-latest-article-img" src="<?php echo $dbcArticles->getMainPhotoURL($latestFeatures[1]['article_id']); ?>" alt="<?php echo $dbcArticles->getTeaser($latestFeatures[1]['article_id']); ?>" />

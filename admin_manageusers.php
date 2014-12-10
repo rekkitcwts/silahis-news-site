@@ -16,7 +16,6 @@ require_once('template/silahis_sessionstarter.php');
 		header('Location: staff_login.php');
 		exit();
 	}
-//	require_once('template/silahis_adviserchecker.php');
 	require_once('template/silahis_header_staffpanel.php');
 	require_once('template/silahis_nav_adminpanel.php');
 
@@ -56,18 +55,6 @@ require_once('template/silahis_sessionstarter.php');
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <?php
-											//	while($row = pg_fetch_assoc($staffquery))
-                                        /*        for ($i = 0; $i < count($constituentArray); $i++)
-												{
-													echo '<tr>';
-                                                    echo '<th>' . $constituentArray[$i]['staff_id'] . '</th>';
-													echo '<th>' . $constituentArray[$i]['staff_fname'] . '</th>';
-													echo '<th>' . $constituentArray[$i]['staff_lname'] . '</th>';
-                                                    echo '<th><button type="button" class="btn btn-md btn-primary profile" data-idno="' . $constituentArray[$i]['staff_id'] . '">Profile</button></th>';
-													echo '</tr>';
-												}  */
-											?>
                                         </tbody>
                                         <tfoot>
                                             <tr>

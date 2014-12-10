@@ -112,7 +112,7 @@
 			}
 			$query = "SELECT article.article_id FROM article INNER JOIN articletype ON (article.article_type = articletype.type_id) WHERE articletype.type_name ";
 
-			return $this->get_results($query . $comparison . " AND article.status = 'Published' AND deleted = false ORDER BY article.article_views DESC, article.date_published DESC LIMIT $limit");
+			return $this->get_results($query . $comparison . " AND article.status = 'Published' AND deleted = false ORDER BY article.date_published DESC, article.article_views ASC LIMIT $limit");
 		}
 
 		public function prevDaysRecentArticles()
@@ -169,6 +169,22 @@
 
 
 		    return $this->get_results($search_query);
+		}
+
+		public function getNumOfArticles($status)
+		{
+			if ($status == 'pending') 
+			{
+				return $this->get_var("SELECT COUNT (*) as num_articles FROM article WHERE status = 'Pending'");
+			}
+			if ($status == 'live') 
+			{
+				return $this->get_var("SELECT COUNT (*) as num_articles FROM article WHERE status = 'Published'");
+			}
+			if ($status == 'deleted') 
+			{
+				return $this->get_var("SELECT COUNT (*) as num_articles FROM article WHERE deleted = true");
+			}
 		}
 
 		/* 

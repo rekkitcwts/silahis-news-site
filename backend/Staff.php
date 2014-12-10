@@ -24,6 +24,39 @@
 			else return false;
 		}
 
+		public function login($username, $password)
+		{
+			$user = $this->get_row("SELECT staff_position.staff_id, position.position_id, staff.staff_username, staff.staff_salt, staff.staff_password, position.position_name FROM staff_position INNER JOIN position USING (position_id) INNER JOIN staff USING (staff_id) WHERE staff.staff_username = '$username' AND staff_position.enddate IS NULL");
+			if ($user['staff_username'] != '') 
+			{
+				$reconstructedHash = implode(":", array(PBKDF2_HASH_ALGORITHM, PBKDF2_ITERATIONS, $user['staff_salt'], $user['staff_password']));
+				if ((validate_password($password, $reconstructedHash) == true) && !empty($user['position_id']))
+				{
+			// success! Set the cookies and sessions here!
+			if (!isset($_SESSION['staff_id']))
+			{
+				$_SESSION['staff_id'] = $user['staff_id'];
+				$_SESSION['position_id'] = $user['position_id'];
+				$_SESSION['staff_username'] = $user['staff_username'];
+			}
+				setcookie('staff_id', $user['staff_id'], time() + (60 * 60 * 24 * 30));    // expires in 30 days
+				setcookie('staff_username', $user['staff_username'], time() + (60 * 60 * 24 * 30));  // expires in 30 days
+				setcookie('position_id', $user['position_id'], time() + (60 * 60 * 24 * 30));
+
+				return array('result' => true, 'position' => $user['position_name']);
+				}
+				else
+				{
+					return false;
+				}
+			} 
+			else 
+			{
+				return false;
+			}
+			
+		}
+
 		/* 
 		 *  Data Structures "Getters and Setters"
 		 */
